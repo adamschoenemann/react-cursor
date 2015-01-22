@@ -1,4 +1,5 @@
-var React = require('react/addons');
+var React = require('react');
+var addonUpdate = require('react/lib/update');
 var util = require('./util');
 
 'use strict';
@@ -37,7 +38,7 @@ function update(cmp, path, operation, nextValue) {
   var nextState;
 
   if (path.length > 0) {
-    nextState = React.addons.update(
+    nextState = addonUpdate(
       cmp._pendingState || cmp.state,
       path.concat(operation).reduceRight(util.unDeref, nextValue)
     );

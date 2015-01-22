@@ -1,5 +1,6 @@
 var React = require('react');
 var Cursor = require('../../src/Cursor');
+var TestUtils = require('react/lib/ReactTestUtils');
 
 'use strict';
 
@@ -14,7 +15,7 @@ function renderComponentWithState(initialState) {
   });
 
   var TestComponent = React.createFactory(descriptor);
-  return React.addons.TestUtils.renderIntoDocument(TestComponent({}));
+  return TestUtils.renderIntoDocument(TestComponent({}));
 }
 
 describe('Cursor', function () {
